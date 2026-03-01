@@ -1,4 +1,4 @@
-# MIT 6.S894 Accelerated Computing - CUDA Learning Portfolio
+# MIT 6.S894 Accelerated Computing
 
 Course page: https://accelerated-computing.academy/fall25/
 
@@ -13,6 +13,8 @@ The focus is not only "finishing labs", but also showing:
 
 This repository is my personal learning notes and implementation record for MIT 6.S894.
 Most experiments and runs were executed on Kaggle and Google Colab GPU environments.
+
+**Acknowledgment:** The implementation and documentation in this repository have been developed with the assistance of Claude Code, an AI coding assistant by Anthropic. Claude Code has helped with code development, optimization strategies, and documentation throughout the course.
 
 ## What This Portfolio Demonstrates
 
@@ -45,16 +47,4 @@ Most experiments and runs were executed on Kaggle and Google Colab GPU environme
 | `lab9` | H100 TMA and warp scheduler | `0-tma-single-load.cu` ... `5-tma-swizzle.cu`, `LAB9_SUMMARY.md` |
 | `lab10` | H100 WGMMA / swizzle matmul | `0-m64n8k16-wgmma.cu`, `1-swizzle-m64n8k32-wgmma.cu`, `h100-matmul.cu` |
 | `lab11` | TPU collectives and tensor parallelism (JAX/Pallas) | `collectives.py`, `collective_matmul.py`, `LAB11_SUMMARY.md` |
-
-## Reproducibility
-
-### Environment
-
-- NVIDIA GPU (labs vary by architecture; some parts target P100/T4/H100)
-- CUDA toolkit + `nvcc`
-- Python 3 (for helper scripts/plots in several labs)
-
-### Typical Build/Run Pattern
-
-Some labs are hardware-specific (for example H100 TMA/WGMMA in `lab9`/`lab10`), so results should be interpreted relative to the target GPU.
 
