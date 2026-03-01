@@ -2,16 +2,9 @@
 
 課程頁面：https://accelerated-computing.academy/fall25/
 
-本儲存庫是我在 MIT 6.S894 課程中的實戰實作作品集。
-重點不僅僅是「完成實驗」，還要展示：
-
-- 我能夠從頭到尾實作 CUDA 核心。
-- 我能夠透過性能分析和硬體約束進行性能推理。
-- 我能夠用可重現的證據記錄最佳化決策。
-
 ## 說明
 
-本儲存庫是我個人在 MIT 6.S894 課程中的學習筆記和實作記錄。
+這是我在 MIT 6.S894 課程中的學習筆記和實作記錄。
 大多數實驗和執行都是在 Kaggle 和 Google Colab GPU 環境上進行的。
 
 **致謝：** 本儲存庫中的實作和文件是在 Anthropic 的人工智慧編程助手 Claude Code 的協助下開發完成的。在整個課程中，Claude Code 在程式碼開發、最佳化策略和文件編寫方面提供了幫助。
@@ -34,16 +27,16 @@
 
 ## 實驗映射（實作 + 筆記）
 
-| 實驗 | 主題 | 關鍵檔案 |
+| 實驗 | 主題 | 學習目標 |
 |---|---|---|
-| `lab1` | Mandelbrot、從 SIMD 到 GPU 並行化 | `mandelbrot_gpu.cu`, `mandelbrot_gpu_parallel.cu`, `PROFILING_GUIDE.md`, `Lab1_SUMMARY.md` |
-| `lab2` | Roofline、排程器直覺、Mandelbrot 擴展 | `roofline.cu`, `warp_scheduler.cu`, `PART*_IMPLEMENTATION_NOTES.md` |
-| `lab3` | 記憶體密集型工作負載、快取/合併 | `mem-latency.cu`, `coalesced-loads.cu`, `PART1.md`, `PART2.md` |
-| `lab4` | 矩陣乘法分塊和複用 | `matmul.cu`, `matmul_cute.cu`, `LAB4_SUMMARY.md` |
-| `lab5` | 改進的矩陣乘法排程和佔用率 | `matmul_2.cu`, `OCCUPANCY_CONFIG.md`, `PART2_PERFORMANCE_ANALYSIS.md` |
-| `lab6` | Tensor Core 矩陣乘法（WMMA/MMA） | `exercise_mma.cu`, `matmul_3.cu`, `PART0.md` |
-| `lab7` | Warp shuffle + 並行掃描 + RLE | `shuffle.cu`, `scan.cu`, `rle_compress.cu`, `LAB7_SUMMARY.md` |
-| `lab8` | GPU 轉譯器（1000萬個圓形） | `circles.cu`, `LAB8_SUMMARY.md` |
-| `lab9` | H100 TMA 和 warp 排程器 | `0-tma-single-load.cu` ... `5-tma-swizzle.cu`, `LAB9_SUMMARY.md` |
-| `lab10` | H100 WGMMA / swizzle 矩陣乘法 | `0-m64n8k16-wgmma.cu`, `1-swizzle-m64n8k32-wgmma.cu`, `h100-matmul.cu` |
-| `lab11` | TPU 集合操作和張量並行（JAX/Pallas） | `collectives.py`, `collective_matmul.py`, `LAB11_SUMMARY.md` |
+| `lab1` | Mandelbrot、從 SIMD 到 GPU 並行化 | 理解並行分解和 GPU 記憶體佈局；性能分析和單核心優化 |
+| `lab2` | Roofline、排程器直覺、Mandelbrot 擴展 | 使用 Roofline 模型分析性能；理解計算密集型和記憶體密集型工作負載 |
+| `lab3` | 記憶體密集型工作負載、快取/合併 | 最佳化記憶體存取模式；探索快取層級和記憶體合併策略 |
+| `lab4` | 矩陣乘法分塊和複用 | 實現跨記憶體級別的資料複用；最佳化 L1/L2 快取和共享記憶體 |
+| `lab5` | 改進的矩陣乘法排程和佔用率 | 平衡佔用率和暫存器壓力；應用排程和分塊最佳化 |
+| `lab6` | Tensor Core 矩陣乘法（WMMA/MMA） | 利用硬體加速器（WMMA/MMA）；使用專用指令實現顯著加速 |
+| `lab7` | Warp shuffle + 並行掃描 + RLE | 實現 intra-warp 通信；設計高效的掃描和壓縮演算法 |
+| `lab8` | GPU 轉譯器（1000萬個圓形） | 構建複雜的轉譯工作負載；管理大規模並行處理和負載平衡 |
+| `lab9` | H100 TMA 和 warp 排程器 | 理解先進的 H100 功能（TMA）；使用張量記憶體加速最佳化資料移動 |
+| `lab10` | H100 WGMMA / swizzle 矩陣乘法 | 掌握 WGMMA 編程；實現基於 swizzle 的記憶體佈局最佳化 |
+| `lab11` | TPU 集合操作和張量並行（JAX/Pallas） | 探索分散計算；應用集合通信和張量並行模式 |

@@ -2,13 +2,6 @@
 
 Course page: https://accelerated-computing.academy/fall25/
 
-This repository is my hands-on implementation portfolio for MIT 6.S894.  
-The focus is not only "finishing labs", but also showing:
-
-- I can implement CUDA kernels end-to-end.
-- I can reason about performance with profiling and hardware constraints.
-- I can document optimization decisions with reproducible evidence.
-
 ## Note
 
 This repository is my personal learning notes and implementation record for MIT 6.S894.
@@ -34,17 +27,17 @@ Most experiments and runs were executed on Kaggle and Google Colab GPU environme
 
 ## Lab Map (Implementation + Notes)
 
-| Lab | Topic | Key Files |
+| Lab | Topic | Learning Objectives |
 |---|---|---|
-| `lab1` | Mandelbrot, SIMD to GPU parallelism | `mandelbrot_gpu.cu`, `mandelbrot_gpu_parallel.cu`, `PROFILING_GUIDE.md`, `Lab1_SUMMARY.md` |
-| `lab2` | Roofline, scheduler intuition, Mandelbrot scaling | `roofline.cu`, `warp_scheduler.cu`, `PART*_IMPLEMENTATION_NOTES.md` |
-| `lab3` | Memory-dominated workloads, cache/coalescing | `mem-latency.cu`, `coalesced-loads.cu`, `PART1.md`, `PART2.md` |
-| `lab4` | Matmul tiling and reuse | `matmul.cu`, `matmul_cute.cu`, `LAB4_SUMMARY.md` |
-| `lab5` | Improved matmul scheduling and occupancy | `matmul_2.cu`, `OCCUPANCY_CONFIG.md`, `PART2_PERFORMANCE_ANALYSIS.md` |
-| `lab6` | Tensor Core matmul (WMMA/MMA) | `exercise_mma.cu`, `matmul_3.cu`, `PART0.md` |
-| `lab7` | Warp shuffle + parallel scan + RLE | `shuffle.cu`, `scan.cu`, `rle_compress.cu`, `LAB7_SUMMARY.md` |
-| `lab8` | GPU renderer (10M circles) | `circles.cu`, `LAB8_SUMMARY.md` |
-| `lab9` | H100 TMA and warp scheduler | `0-tma-single-load.cu` ... `5-tma-swizzle.cu`, `LAB9_SUMMARY.md` |
-| `lab10` | H100 WGMMA / swizzle matmul | `0-m64n8k16-wgmma.cu`, `1-swizzle-m64n8k32-wgmma.cu`, `h100-matmul.cu` |
-| `lab11` | TPU collectives and tensor parallelism (JAX/Pallas) | `collectives.py`, `collective_matmul.py`, `LAB11_SUMMARY.md` |
+| `lab1` | Mandelbrot, SIMD to GPU parallelism | Understand parallel decomposition and GPU memory layout; Profile and optimize single-kernel implementations |
+| `lab2` | Roofline, scheduler intuition, Mandelbrot scaling | Analyze performance with Roofline Model; Understand compute-bound vs memory-bound workloads |
+| `lab3` | Memory-dominated workloads, cache/coalescing | Optimize memory access patterns; Explore cache hierarchy and memory coalescing strategies |
+| `lab4` | Matmul tiling and reuse | Implement data reuse across memory levels; Optimize L1/L2 cache and shared memory usage |
+| `lab5` | Improved matmul scheduling and occupancy | Balance occupancy vs register pressure; Apply scheduling and blocking optimizations |
+| `lab6` | Tensor Core matmul (WMMA/MMA) | Leverage hardware accelerators (WMMA/MMA); Achieve significant speedup with specialized instructions |
+| `lab7` | Warp shuffle + parallel scan + RLE | Implement intra-warp communication; Design efficient scan and compression algorithms |
+| `lab8` | GPU renderer (10M circles) | Build complex rendering workloads; Manage large-scale parallel processing and load balancing |
+| `lab9` | H100 TMA and warp scheduler | Understand advanced H100 features (TMA); Optimize data movement with tensor memory acceleration |
+| `lab10` | H100 WGMMA / swizzle matmul | Master WGMMA programming; Implement swizzle-based memory layout optimizations |
+| `lab11` | TPU collectives and tensor parallelism (JAX/Pallas) | Explore distributed computing; Apply collective communication and tensor parallelism patterns |
 
